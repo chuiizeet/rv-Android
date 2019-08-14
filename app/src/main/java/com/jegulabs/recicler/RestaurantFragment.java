@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.jegulabs.recicler.dummy.DummyContent;
 import com.jegulabs.recicler.dummy.DummyContent.DummyItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,17 +24,16 @@ import java.util.List;
  */
 public class RestaurantFragment extends Fragment {
 
-    RecyclerView recyclerView;
+    // MARK: - Properties
 
-    // TODO: Customize parameters
+    RecyclerView recyclerView;
+    MyRestaurantRecyclerViewAdapter adapterRestaurant;
+    List<Restaurant> restaurantList;
+
     private int mColumnCount = 1;
 
     private OnListFragmentInteractionListener mListener;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public RestaurantFragment() {
     }
 
@@ -57,7 +57,15 @@ public class RestaurantFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyRestaurantRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            // List
+            restaurantList = new ArrayList<>();
+            restaurantList.add(new Restaurant("Migas el kid", "", 0.1f,"FOD"));
+            restaurantList.add(new Restaurant("Tacos el chuy", "", 5.0f,"<3"));
+
+            // Link adapter - reciclerView
+            adapterRestaurant = new MyRestaurantRecyclerViewAdapter(restaurantList, mListener);
+            recyclerView.setAdapter(adapterRestaurant);
         }
         return view;
     }
