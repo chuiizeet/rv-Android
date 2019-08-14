@@ -10,8 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jegulabs.recicler.dummy.DummyContent;
-import com.jegulabs.recicler.dummy.DummyContent.DummyItem;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,8 +59,8 @@ public class RestaurantFragment extends Fragment {
 
             // List
             restaurantList = new ArrayList<>();
-            restaurantList.add(new Restaurant("Migas el kid", "", 0.1f,"FOD"));
-            restaurantList.add(new Restaurant("Tacos el chuy", "", 5.0f,"<3"));
+            restaurantList.add(new Restaurant("Tacos goku", "https://www.db-z.com/wp-content/uploads/2018/03/Goku-Kebab-Tacos-Mexique-739x415.jpg", 4.2f,"Oaxaca"));
+            restaurantList.add(new Restaurant("KFC", "https://i.ytimg.com/vi/4Q77UhKID_A/maxresdefault.jpg", 2.5f,"Donde sea"));
 
             // Link adapter - reciclerView
             adapterRestaurant = new MyRestaurantRecyclerViewAdapter(restaurantList, mListener);
@@ -100,6 +99,6 @@ public class RestaurantFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Restaurant item);
     }
 }

@@ -3,7 +3,6 @@ package com.jegulabs.recicler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.jegulabs.recicler.dummy.DummyContent;
 
 public class MainActivity extends AppCompatActivity implements RestaurantFragment.OnListFragmentInteractionListener {
 
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements RestaurantFragmen
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(Restaurant item) {
 
     }
 }
